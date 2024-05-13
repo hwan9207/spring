@@ -1,0 +1,54 @@
+새 project 만들때 마다 project facets java version 확인
+
+configure -> convert to maven project 하면 pom.xml 생성
+pom.xml 복붙하고..
+
+web.xml 복붙 그 안의 내용중
+<param-value>/WEB-INF/spring/root-context.xml</param-value>  // 여기에 DB계정 연결
+<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+내용 경로대로 파일 생성 내용 복붙
+
+servlet-context.xml 내용중 
+<resources mapping="/include/**" location="/WEB-INF/views/include" />
+내용 경로대로 WEB-INF/views/include 등 파일 생성
+
+DB에 table 생성 
+dto 생성 
+
+
+main resources의 sampleMapper.xml 오라클 명령문 작성 id값을 dao 연결..
+
+
+main/resources/
+main/resources/mybatis-config.xml
+main/resources/mappers/sample/Mapper.xml
+main/resources/log4j.xml
+main/resources/log4jdbc.log4j2.properties
+main/resources/logback.xml
+
+com.spring1.myapp
+com.spring1.controller
+com.spring1.dao
+com.spring1.dto
+com.spring1.service
+com.spring1.util
+com.spring1.test 
+pakage 안에 파일 등등 생성 				
+			
+
+----------------------- 24-05-03 --------------------------------------
+D:\yu\springframework\.metadata\.plugins\org.springsource.ide.eclipse.commons.content.core
+이 경로에 https-content.xml 이거 복붙
+Spring Legacy Project > Spring MVC Project 생성하면 새 프로젝트에 세팅이됨
+세팅할때 재상용(!!이 홈페이지 만드는 세팅 관련해서만!!) 할것 정리해보자..
+
+내용은 변경하더라도 어차피 만들어야 하는 파일들
+1.pom.xml : groupld, artifactld 프로젝트명 변경
+2.web.xml : 
+3.WEB-INF/views(안에 있는 파일까지) : spring/appServlet/servlet-context.xml 파일에 프로젝트명 2개 변경
+4.WEB-INF/spring(안에 있는 파일까지)
+5.src/main/resources(안에 있는 파일까지) : mappers/sampleMapper.xml 파일에 프로젝트명 2개 변경
+				     log4j.xml/ logger 부분 프로젝트명 변경
+				     mybatis-config.xml package name= 부분 변경	
+6.src/main/java/package(패키지명만 바꾸고 안에 java파일들은 그때그때 생성)
+

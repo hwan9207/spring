@@ -1,0 +1,7 @@
+package com.spring1.util;
+
+//springframework validation 활용 
+
+public class Checkalri {
+
+}

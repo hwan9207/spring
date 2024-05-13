@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="path2" value="${pageContext.request.contextPath }" />
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상점 등록</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+	<div class="form">
+		<input type="number" name="studentNum1" id="num" placeholder="번호 입력" /><br><br>
+		<input type="text" name="studentName1" id="name" placeholder="학생명 입력" /><br><br>
+		<input type="number" name="studentAge1" id="age" placeholder="나이 입력" /><br><br>
+	</div>
+	<div class="form">
+		<input type="number" name="studentNum2" id="num" placeholder="번호 입력" /><br><br>
+		<input type="text" name="studentName2" id="name" placeholder="학생명 입력" /><br><br>
+		<input type="number" name="studentAge2" id="age" placeholder="나이 입력" /><br><br>
+	</div>
+	<div class="form">
+		<input type="number" name="studentNum3" id="num" placeholder="번호 입력" /><br><br>
+		<input type="text" name="studentName3" id="name" placeholder="학생명 입력" /><br><br>
+		<input type="number" name="studentAge3" id="age" placeholder="나이 입력" /><br><br>
+	</div>
+		<button type="button" id="btn1">등록</button>
+	<table>
+		<thead>
+			<th>번호</th><th>상점명</th>
+		</thead>
+		<tbody id="tbody">
+			
+		</tbody>
+	</table>
+	<script>
+	  $(document).ready(function(){
+		$("#btn1").click(function(){
+			var student = {stdNumber:parseInt($("#num").val()),storeName:$("#name").val(),age:parseInt($("age".val())};
+			$.ajax({
+				type:"post",
+				url:"${path2}/api/api6.do",
+				data:JSON.stringify(student),
+				dataType:"json",
+				contentType: 'application/json; charset=utf-8',
+				success:function(data) {
+					console.log(data)
+				}
+			});
+		});
+	  });
+	</script>
+</body>
+</html>

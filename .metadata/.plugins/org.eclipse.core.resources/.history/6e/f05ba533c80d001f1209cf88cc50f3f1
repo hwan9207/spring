@@ -1,0 +1,12 @@
+package com.spring1.vo;
+
+import java.util.ArrayList;
+
+public class Maket {
+	
+	private String part;
+	private Integer partNum;
+	private ArrayList storelist;
+	
+	
+}

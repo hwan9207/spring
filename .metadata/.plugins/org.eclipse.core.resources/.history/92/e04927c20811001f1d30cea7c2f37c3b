@@ -1,0 +1,18 @@
+package com.spring1.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//binding ? 에 결과 리턴
+
+@Controller
+@RequestMapping("/check")
+public class CheckController {
+	
+	@GetMapping("check1.do")
+	public String checkhome(Model model) {
+		return "check/check1";
+	}
+}

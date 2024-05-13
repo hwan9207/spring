@@ -1,0 +1,31 @@
+package com.spring1.util;
+
+import javax.validation.Validator;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.validation.Errors;
+
+//springframework validation 활용 
+
+//matcher 패턴비교 함수
+//rejectIfEmpty empty 확인 함수
+//invaild
+
+public class CheckValidator implements Validator {
+
+	private static final Logger log = LoggerFactory.getLogger(CheckValidator.class);
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return Check.class.equals(clazz);
+	}
+
+	@Override
+	public void validate(Object obj, Errors errors) {
+		log.info("springframework validation");
+		
+		Check check = (Check) obj;
+	}
+
+}

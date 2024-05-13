@@ -1,0 +1,45 @@
+package com.spring1.dao;
+
+import java.util.List;
+
+import com.spring1.dto.Store;
+
+public class StoreDAOImpl implements StoreDAO{
+
+	@Override
+	public List<Store> getStoreList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int maxNum() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Store getStore(int storenum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insSample(Store store) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void upSample(Store store) {
+		sqlSession.update("store.upStage", store);
+	}
+
+	@Override
+	public void delSample(Store store) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}
